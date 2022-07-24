@@ -77,23 +77,35 @@ enum userspace_layers {
 
 /* Base Layer */
 
+#define BASE_A KC_A
+#define BASE_S KC_S
+#define BASE_D KC_D
+#define BASE_F KC_F
+#define BASE_Z SFT_T(KC_Z)
+
+#define BASE_J KC_J
+#define BASE_K KC_K
+#define BASE_L KC_L
+#define BASE_SCLN KC_SCLN
+#define BASE_SLSH SFT_T(KC_SLSH)
+
 #define BASE_THUMB_L LT(_NAV, KC_SPC)
 #define BASE_THUMB_R LT(_SYM, KC_ENT)
 
 #define _________________BASE_5_L0_________________     _________________NUMBRS_H1_________________
 #define _________________BASE_5_L1_________________     _________________QWERTY_L1_________________
-#define _________________BASE_5_L2_________________     KC_A, KC_S, KC_D, KC_F, KC_G
-#define _________________BASE_5_L3_________________     SFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B
+#define _________________BASE_5_L2_________________     BASE_A, BASE_S, BASE_D, BASE_F, KC_G
+#define _________________BASE_5_L3_________________     BASE_Z, KC_X,   KC_C,   KC_V,   KC_B
 
 #define _________________BASE_5_R0_________________     _________________NUMBRS_H2_________________
 #define _________________BASE_5_R1_________________     _________________QWERTY_R1_________________
-#define _________________BASE_5_R2_________________     KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
-#define _________________BASE_5_R3_________________     KC_N, KC_M, KC_COMM, KC_DOT, SFT_T(KC_SLSH)
+#define _________________BASE_5_R2_________________     KC_H, BASE_J, BASE_K,    BASE_L,   BASE_SCLN
+#define _________________BASE_5_R3_________________     KC_N, KC_M,   KC_COMM,   KC_DOT,   BASE_SLSH
 
-#define _________________BASE_6_L0_________________     KC_GRV,               _________________BASE_5_L0_________________
-#define _________________BASE_6_L1_________________     KC_TAB,               _________________BASE_5_L1_________________
+#define _________________BASE_6_L0_________________     KC_GRV,        _________________BASE_5_L0_________________
+#define _________________BASE_6_L1_________________     KC_TAB,        _________________BASE_5_L1_________________
 #define _________________BASE_6_L2_________________     CTL_T(KC_ESC), _________________BASE_5_L2_________________
-#define _________________BASE_6_L3_________________     KC_LSFT,              _________________BASE_5_L3_________________
+#define _________________BASE_6_L3_________________     KC_LSFT,       _________________BASE_5_L3_________________
 
 #define _________________BASE_6_R0_________________     _________________BASE_5_R0_________________, KC_MINS
 #define _________________BASE_6_R1_________________     _________________BASE_5_R1_________________, KC_BSPC
