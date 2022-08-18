@@ -132,7 +132,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case BASE_Z:
         case BASE_SLSH:
-        case BASE_THUMB_L:
+        // case BASE_THUMB_L:
         case BASE_THUMB_R:
             // Immediately select the hold action when another key is pressed.
             return true;
@@ -144,7 +144,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case BASE_THUMB_L:
+        // case BASE_THUMB_L:
         case BASE_THUMB_R:
             return false;
         default:

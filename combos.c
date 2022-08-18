@@ -138,10 +138,16 @@ combo_t key_combos[] = {
 bool get_combo_must_hold(uint16_t index, combo_t *combo) {
     switch (index) {
         // exclude accidental rolling combos
+        case SFT_COMBO_L:
+        case CMD_COMBO_L:
+        case ALT_COMBO_L:
+        case CTL_COMBO_L:
         case CMD_ALT_COMBO_L:
         case CMD_CTL_COMBO_L:
         case SFT_CTL_COMBO_L:
         case CTL_ALT_COMBO_L:
+        case CMD_ALT_CTL_COMBO_L:
+        case SFT_CMD_ALT_COMBO_L:
             return true;
     }
 
