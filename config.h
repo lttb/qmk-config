@@ -2,6 +2,7 @@
 
 #define COMBO_TERM 50
 #define COMBO_MUST_HOLD_PER_COMBO
+#define COMBO_SHOULD_TRIGGER
 
 // #define TAPPING_TOGGLE 2
 

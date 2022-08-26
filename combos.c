@@ -153,3 +153,14 @@ bool get_combo_must_hold(uint16_t index, combo_t *combo) {
 
     return false;
 }
+
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    switch (combo_index) {
+        case CTL_ALT_COMBO_L:
+            if (keycode == KC_E) {
+                return false;
+            }
+    }
+
+    return true;
+}
