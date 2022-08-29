@@ -10,7 +10,7 @@ LTO_ENABLE = yes
 
 # Change keymaps without flashing
 # https://caniusevia.com/
-VIA_ENABLE = yes
+VIA_ENABLE = no
 
 # Enable audio keys and system control
 EXTRAKEY_ENABLE = yes

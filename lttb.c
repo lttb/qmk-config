@@ -95,9 +95,9 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t* record) {
   }
 }
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _SYM, _NAV, _NUM);
-}
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//     return update_tri_layer_state(state, _SYM, _NAV, _NUM);
+// }
 
 void matrix_scan_user(void) {
   achordion_task();
@@ -130,7 +130,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        // case BASE_Z:
+        case BASE_Z:
         case BASE_SLSH:
         // case BASE_THUMB_L:
         case BASE_THUMB_R:

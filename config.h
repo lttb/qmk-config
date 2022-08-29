@@ -3,6 +3,7 @@
 #define COMBO_TERM 50
 #define COMBO_MUST_HOLD_PER_COMBO
 #define COMBO_SHOULD_TRIGGER
+#define COMBO_TERM_PER_COMBO
 
 // #define TAPPING_TOGGLE 2
 
@@ -41,5 +42,6 @@
 
 #define MK_C_OFFSET_UNMOD 6
 #define MK_C_OFFSET_1 3
+#define MK_C_OFFSET_2 10
 
 #define MK_W_INTERVAL_UNMOD 80

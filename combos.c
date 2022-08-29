@@ -5,6 +5,10 @@
 enum combo_events {
     MOUSE_KEYS_COMBO,
 
+    NUM_COMBO,
+    NUM_COMBO_L,
+    NUM_COMBO_R,
+
     SFT_COMBO,
     SFT_COMBO_L,
     SFT_COMBO_R,
@@ -47,7 +51,11 @@ enum combo_events {
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
-const uint16_t PROGMEM mouse_keys_combo[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM mouse_keys_combo[] = {BASE_X, BASE_C, COMBO_END};
+
+const uint16_t PROGMEM num_combo[]   = {BASE_W, BASE_O,    COMBO_END};
+const uint16_t PROGMEM num_combo_l[] = {BASE_W, BASE_F,    COMBO_END};
+const uint16_t PROGMEM num_combo_r[] = {BASE_J, BASE_O,    COMBO_END};
 
 const uint16_t PROGMEM sft_combo[]   = {BASE_F,       BASE_J,    COMBO_END};
 const uint16_t PROGMEM sft_combo_l[] = {BASE_THUMB_L, BASE_F,    COMBO_END};
@@ -91,7 +99,11 @@ const uint16_t PROGMEM sft_cmd_alt_ctl_combo_l[] = {BASE_A,    BASE_S, BASE_D, B
 const uint16_t PROGMEM sft_cmd_alt_ctl_combo_r[] = {BASE_SCLN, BASE_L, BASE_K, BASE_J, COMBO_END};
 
 combo_t key_combos[] = {
-    [MOUSE_KEYS_COMBO] = COMBO(mouse_keys_combo, TG(1)),
+    [MOUSE_KEYS_COMBO] = COMBO(mouse_keys_combo, TG(_MOUSE)),
+
+    // [NUM_COMBO] = COMBO(num_combo, MO(_NUM)),
+    [NUM_COMBO_L] = COMBO(num_combo_l, MO(_NUM)),
+    // [NUM_COMBO_R] = COMBO(num_combo_r, MO(_NUM)),
 
     [SFT_COMBO] = COMBO(sft_combo, OSM(MOD_LSFT)),
     [SFT_COMBO_L] = COMBO(sft_combo_l, OSM(MOD_LSFT)),
@@ -138,6 +150,7 @@ combo_t key_combos[] = {
 bool get_combo_must_hold(uint16_t index, combo_t *combo) {
     switch (index) {
         // exclude accidental rolling combos
+        case NUM_COMBO_L:
         case SFT_COMBO_L:
         case CMD_COMBO_L:
         case ALT_COMBO_L:
@@ -154,13 +167,11 @@ bool get_combo_must_hold(uint16_t index, combo_t *combo) {
     return false;
 }
 
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+uint16_t get_combo_term(uint16_t combo_index, combo_t *combo) {
     switch (combo_index) {
         case CTL_ALT_COMBO_L:
-            if (keycode == KC_E) {
-                return false;
-            }
+            return 25;
     }
 
-    return true;
+    return COMBO_TERM;
 }
