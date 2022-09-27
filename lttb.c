@@ -24,6 +24,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 bool sw_appl_active = false;
 bool sw_wind_active = false;
 bool sw_lang_active = false;
+bool sw_tabl_active = false;
+bool sw_tabr_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_select_word(keycode, record, UK_SELWRD)) { return false; }
@@ -37,16 +39,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         || keycode == KC_DOWN;
 
     update_swapper(
-        &sw_appl_active, KC_LGUI, KC_TAB, SW_APPL,
+        &sw_appl_active, KC_LGUI, KC_TAB, false, SW_APPL,
         keycode, is_swapper_skip, record
     );
     update_swapper(
-        &sw_wind_active, KC_LGUI, KC_GRV, SW_WIND,
+        &sw_wind_active, KC_LGUI, KC_GRV, false, SW_WIND,
         keycode, is_swapper_skip, record
     );
     update_swapper(
-        &sw_lang_active, KC_LGUI, KC_SPC, SW_LANG,
+        &sw_lang_active, KC_LGUI, KC_SPC, false, SW_LANG,
         keycode, is_swapper_skip, record
+    );
+    update_swapper(
+        &sw_tabr_active, KC_LCTL, KC_TAB, false, SW_TABR,
+        keycode, is_swapper_skip || sw_tabl_active, record
+    );
+    update_swapper(
+        &sw_tabl_active, KC_LCTL, KC_TAB, true, SW_TABL,
+        keycode, is_swapper_skip || sw_tabr_active, record
     );
 
     switch (keycode) {

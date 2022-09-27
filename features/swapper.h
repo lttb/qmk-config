@@ -18,6 +18,7 @@ void update_swapper(
     bool *active,
     uint16_t cmdish,
     uint16_t tabish,
+    bool shifted,
     uint16_t trigger,
     uint16_t keycode,
     bool is_skip,

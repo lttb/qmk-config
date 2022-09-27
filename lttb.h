@@ -28,6 +28,8 @@ enum userspace_layer_codes {
     SW_APPL,
     SW_LANG,
     SW_WIND,
+    SW_TABL,
+    SW_TABR,
 
     UK_SELWRD,
 
@@ -46,8 +48,10 @@ enum userspace_layers {
 
 #define FWD       G(KC_RBRC)
 #define BACK      G(KC_LBRC)
-#define TABL      G(S(KC_LBRC))
-#define TABR      G(S(KC_RBRC))
+// #define TABL      C(S(KC_TAB))
+// #define TABR      C(KC_TAB)
+#define BRCL      G(S(KC_LBRC))
+#define BRCR      G(S(KC_RBRC))
 #define SPCL      A(G(KC_LEFT))
 #define SPC_R     A(G(KC_RGHT))
 #define WORD_PREV A(KC_LEFT)
@@ -169,7 +173,7 @@ enum userspace_layers {
 #define _________________NAVI_5_R0_________________     ___________________________________________
 #define _________________NAVI_5_R1_________________     XXXXXXX,   KC_WH_U,   KC_UP,   KC_WH_D,   KC_DEL
 #define _________________NAVI_5_R2_________________     UK_SELWRD, KC_LEFT,   KC_DOWN, KC_RIGHT,  KC_BSPC
-#define _________________NAVI_5_R3_________________     XXXXXXX,   TABL,      TABR,    XXXXXXX,   XXXXXXX
+#define _________________NAVI_5_R3_________________     XXXXXXX,   SW_TABL,   SW_TABR,    XXXXXXX,   XXXXXXX
 
 #define _________________NAVI_6_L0_________________     _______, _________________NAVI_5_L0_________________
 #define _________________NAVI_6_L1_________________     _______, _________________NAVI_5_L1_________________

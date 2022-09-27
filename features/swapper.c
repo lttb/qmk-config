@@ -9,6 +9,7 @@ void update_swapper(
     bool *active,
     uint16_t cmdish,
     uint16_t tabish,
+    bool shifted,
     uint16_t trigger,
     uint16_t keycode,
     bool is_skip,
@@ -20,9 +21,17 @@ void update_swapper(
                 *active = true;
                 register_code(cmdish);
             }
+            if (shifted) {
+                register_code(KC_LSFT);
+            }
             register_code(tabish);
+
         } else {
             unregister_code(tabish);
+
+            if (shifted) {
+                unregister_code(KC_LSFT);
+            }
             // Don't unregister cmdish until some other key is hit or released.
         }
     } else if (*active && !is_skip) {
