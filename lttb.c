@@ -52,11 +52,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     );
     update_swapper(
         &sw_tabr_active, KC_LCTL, KC_TAB, false, SW_TABR,
-        keycode, is_swapper_skip || sw_tabl_active, record
+        keycode, is_swapper_skip || keycode == SW_TABL, record
     );
     update_swapper(
         &sw_tabl_active, KC_LCTL, KC_TAB, true, SW_TABL,
-        keycode, is_swapper_skip || sw_tabr_active, record
+        keycode, is_swapper_skip || keycode == SW_TABR, record
     );
 
     switch (keycode) {
