@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _________________NUMB_6_L3_________________,   _______, _______,    _________________NUMB_6_R3_________________,
               XXXXXXX, XXXXXXX, __________NUMB_3_LT___________, __________NUMB_3_RT___________, XXXXXXX, XXXXXXX
     ),
-    
+
     [_MOUSE] = LAYOUT_wrapper(
         _________________MOUS_6_L0_________________,                        _________________MOUS_6_R0_________________,
         _________________MOUS_6_L1_________________,                        _________________MOUS_6_R1_________________,
@@ -57,7 +57,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [_DEF] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [_SYM] =   { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [_NAV] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_WH_L, KC_WH_R) },
+    [_NUM] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [_MOUSE] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [_SCRL] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+};
+#endif
 
 #ifdef OLED_ENABLE
 
