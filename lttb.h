@@ -114,7 +114,7 @@ enum userspace_layers {
 #define _________________BASE_5_R3_________________     KC_N, KC_M,   KC_COMM, KC_DOT, BASE_SLSH
 
 #define _________________BASE_6_L0_________________     KC_GRV,        _________________BASE_5_L0_________________
-#define _________________BASE_6_L1_________________     KC_TAB,        _________________BASE_5_L1_________________
+#define _________________BASE_6_L1_________________     LT(_SYM, KC_TAB),        _________________BASE_5_L1_________________
 #define _________________BASE_6_L2_________________     CTL_T(KC_ESC), _________________BASE_5_L2_________________
 #define _________________BASE_6_L3_________________     KC_LSFT,       _________________BASE_5_L3_________________
 
@@ -163,12 +163,12 @@ enum userspace_layers {
 
 /* Navigation Layer */
 
-
+#define NAVI_X G(KC_X)
 
 #define _________________NAVI_5_L0_________________     ___________________________________________
 #define _________________NAVI_5_L1_________________     SW_WIND,          SW_APPL,          BACK,              FWD,               XXXXXXX
 #define _________________NAVI_5_L2_________________     CTL_T(KC_DEL),    OPT_T(KC_TAB),    GUI_T(KC_PGDN),    SFT_T(KC_PGUP),    CAPS_WORD
-#define _________________NAVI_5_L3_________________     G(KC_Z),          G(KC_X),          G(KC_C),           G(KC_V),           SW_LANG
+#define _________________NAVI_5_L3_________________     G(KC_Z),          NAVI_X,          G(KC_C),           G(KC_V),           SW_LANG
 
 #define _________________NAVI_5_R0_________________     ___________________________________________
 #define _________________NAVI_5_R1_________________     XXXXXXX,   KC_WH_U,   KC_UP,   KC_WH_D,   KC_DEL

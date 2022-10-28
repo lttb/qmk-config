@@ -40,8 +40,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     update_swapper(
         &sw_appl_active, KC_LGUI, KC_TAB, false, SW_APPL,
-        keycode, is_swapper_skip, record
+        keycode, is_swapper_skip || keycode == NAVI_X, record
     );
+    if (sw_appl_active && keycode == NAVI_X) {
+        if (record->event.pressed) {
+            unregister_code(KC_X);
+            register_code(KC_Q);
+        } else {
+            unregister_code(KC_Q);
+        }
+    }
+
     update_swapper(
         &sw_wind_active, KC_LGUI, KC_GRV, false, SW_WIND,
         keycode, is_swapper_skip, record
