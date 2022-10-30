@@ -169,14 +169,14 @@ enum userspace_layers {
 #define NAVI_RAYCAST G(KC_ESC)
 
 #define _________________NAVI_5_L0_________________     ___________________________________________
-#define _________________NAVI_5_L1_________________     SW_WIND,          SW_APPL,         TAB_BACK,         SW_LANG,           KC_WH_D
-#define _________________NAVI_5_L2_________________     CTL_T(KC_CAPS),   OPT_T(KC_TAB),    GUI_T(KC_PGUP),   SFT_T(KC_PGDN),    G(KC_A)
-#define _________________NAVI_5_L3_________________     G(KC_Z),          NAVI_X,          G(KC_C),           G(KC_V),           G(KC_ESC)
+#define _________________NAVI_5_L1_________________     SW_WIND,        SW_APPL,         TAB_BACK,         SW_LANG,           KC_WH_D
+#define _________________NAVI_5_L2_________________     CTL_T(KC_CAPS), OPT_T(KC_TAB),   GUI_T(KC_PGUP),   SFT_T(KC_PGDN),    G(KC_A)
+#define _________________NAVI_5_L3_________________     G(KC_Z),        NAVI_X,         G(KC_C),           G(KC_V),           G(KC_ESC)
 
 #define _________________NAVI_5_R0_________________     ___________________________________________
-#define _________________NAVI_5_R1_________________     KC_WH_U,   KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX
-#define _________________NAVI_5_R2_________________     UK_SELWRD, KC_LEFT, KC_DOWN, KC_RIGHT,  XXXXXXX
-#define _________________NAVI_5_R3_________________     CAPS_WORD, BRCL,    BRCR,    KC_LBRC,   KC_RBRC
+#define _________________NAVI_5_R1_________________     KC_WH_U, KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX
+#define _________________NAVI_5_R2_________________     KC_LBRC, KC_LEFT, KC_DOWN, KC_RIGHT,  CAPS_WORD
+#define _________________NAVI_5_R3_________________     KC_RBRC, BRCL,    BRCR,    UK_SELWRD, XXXXXXX
 
 #define _________________NAVI_6_L0_________________     _______, _________________NAVI_5_L0_________________
 #define _________________NAVI_6_L1_________________     _______, _________________NAVI_5_L1_________________
