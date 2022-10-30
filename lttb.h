@@ -48,6 +48,8 @@ enum userspace_layers {
 
 #define FWD       G(KC_RBRC)
 #define BACK      G(KC_LBRC)
+#define TAB_FWD   KC_TAB
+#define TAB_BACK  S(KC_TAB)
 // #define TABL      C(S(KC_TAB))
 // #define TABR      C(KC_TAB)
 #define BRCL      G(S(KC_LBRC))
@@ -164,16 +166,17 @@ enum userspace_layers {
 /* Navigation Layer */
 
 #define NAVI_X G(KC_X)
+#define NAVI_RAYCAST G(KC_ESC)
 
 #define _________________NAVI_5_L0_________________     ___________________________________________
-#define _________________NAVI_5_L1_________________     SW_WIND,          SW_APPL,          BACK,              FWD,               XXXXXXX
-#define _________________NAVI_5_L2_________________     CTL_T(KC_DEL),    OPT_T(KC_TAB),    GUI_T(KC_PGDN),    SFT_T(KC_PGUP),    CAPS_WORD
-#define _________________NAVI_5_L3_________________     G(KC_Z),          NAVI_X,          G(KC_C),           G(KC_V),           SW_LANG
+#define _________________NAVI_5_L1_________________     SW_WIND,          SW_APPL,         TAB_BACK,         SW_LANG,           KC_WH_D
+#define _________________NAVI_5_L2_________________     CTL_T(KC_CAPS),   OPT_T(KC_TAB),    GUI_T(KC_PGUP),   SFT_T(KC_PGDN),    G(KC_A)
+#define _________________NAVI_5_L3_________________     G(KC_Z),          NAVI_X,          G(KC_C),           G(KC_V),           G(KC_ESC)
 
 #define _________________NAVI_5_R0_________________     ___________________________________________
-#define _________________NAVI_5_R1_________________     XXXXXXX,   KC_WH_U,   KC_UP,   KC_WH_D,   KC_DEL
-#define _________________NAVI_5_R2_________________     UK_SELWRD, KC_LEFT,   KC_DOWN, KC_RIGHT,  KC_BSPC
-#define _________________NAVI_5_R3_________________     XXXXXXX,   SW_TABL,   SW_TABR,    XXXXXXX,   XXXXXXX
+#define _________________NAVI_5_R1_________________     KC_WH_U,   KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX
+#define _________________NAVI_5_R2_________________     UK_SELWRD, KC_LEFT, KC_DOWN, KC_RIGHT,  XXXXXXX
+#define _________________NAVI_5_R3_________________     CAPS_WORD, BRCL,    BRCR,    KC_LBRC,   KC_RBRC
 
 #define _________________NAVI_6_L0_________________     _______, _________________NAVI_5_L0_________________
 #define _________________NAVI_6_L1_________________     _______, _________________NAVI_5_L1_________________
