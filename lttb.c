@@ -94,7 +94,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
 
-    // if (!process_achordion(keycode, record)) { return false; }
+    if (!process_achordion(keycode, record)) { return false; }
 
     return true;
 }
@@ -131,6 +131,8 @@ bool achordion_chord(
     switch (tap_hold_keycode) {
         case BASE_THUMB_L:
         case BASE_THUMB_R:
+        case BASE_ESC:
+        case BASE_Z:
             return true;
     }
 
@@ -141,6 +143,8 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   switch (tap_hold_keycode) {
         case BASE_THUMB_L:
         case BASE_THUMB_R:
+        case BASE_ESC:
+        case BASE_Z:
             return 0;  // Bypass Achordion for these keys.
   }
 
