@@ -92,21 +92,24 @@ enum userspace_layers {
 
 #define BASE_Q       KC_Q
 #define BASE_W       KC_W
-#define BASE_A       KC_A
-#define BASE_S       KC_S
-#define BASE_D       KC_D
-#define BASE_F       KC_F
-#define BASE_Z       SFT_T(KC_Z)
+
+#define BASE_A       CTL_T(KC_A)
+#define BASE_S       OPT_T(KC_S)
+#define BASE_D       CMD_T(KC_D)
+#define BASE_F       SFT_T(KC_F)
+
+#define BASE_Z       KC_Z
 #define BASE_X       LT(_MOUSE,KC_X)
 #define BASE_C       KC_C
 
 #define BASE_P       KC_P
 #define BASE_O       KC_O
-#define BASE_J       KC_J
-#define BASE_K       KC_K
-#define BASE_L       KC_L
-#define BASE_SCLN    LT(_NUM,KC_SCLN)
-#define BASE_SLSH    SFT_T(KC_SLSH)
+
+#define BASE_J       SFT_T(KC_J)
+#define BASE_K       CMD_T(KC_K)
+#define BASE_L       OPT_T(KC_L)
+#define BASE_SCLN    CTL_T(KC_SCLN)
+#define BASE_SLSH    KC_SLSH
 
 #define BASE_THUMB_L LT(_NAV,KC_SPC)
 #define BASE_THUMB_R LT(_SYM,KC_ENT)
