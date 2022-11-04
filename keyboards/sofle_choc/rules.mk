@@ -1,7 +1,7 @@
 ENCODER_ENABLE = yes
 ENCODER_MAP_ENABLE = yes
 
-OLED_ENABLE = no
+OLED_ENABLE = yes
 
 # Enable per-key lighting
 RGB_MATRIX_ENABLE = no

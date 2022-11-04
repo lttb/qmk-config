@@ -88,50 +88,39 @@ void write_int_ln(const char* prefix, uint8_t value) {
 static void print_status_narrow(void) {
     oled_write_ln_P(PSTR("SofleChoc _____"), false);
 
-    if (get_highest_layer(layer_state) == _ADJUST) {
-        uint8_t mode  = rgb_matrix_get_mode();
-        HSV     hsv   = rgb_matrix_get_hsv();
-        uint8_t speed = rgb_matrix_get_speed();
-
-        if (keymap_config.swap_lctl_lgui) {
-            oled_write_ln_P(PSTR("MAC\n"), false);
-        } else {
-            oled_write_ln_P(PSTR("WIN\n"), false);
-        }
-
-        oled_write_ln("RGB", false);
-        write_int_ln(PSTR("Mo"), mode);
-        write_int_ln(PSTR("H "), hsv.h);
-        write_int_ln(PSTR("S "), hsv.s);
-        write_int_ln(PSTR("V "), hsv.v);
-        write_int_ln(PSTR("Sp"), speed);
-        oled_write_P(PSTR("\n\n\n"), false);
+    oled_write_P(PSTR("\n\n\n\n\n\n\n\n\n"), false);
+    led_t led_usb_state = host_keyboard_led_state();
+    if (led_usb_state.caps_lock) {
+        oled_write_ln_P(PSTR(" CAP "), true);
     } else {
-        oled_write_P(PSTR("\n\n\n\n\n\n\n\n\n"), false);
-        led_t led_usb_state = host_keyboard_led_state();
-        if (led_usb_state.caps_lock) {
-            oled_write_ln_P(PSTR(" CAP "), true);
-        } else {
-            oled_write_ln_P(PSTR("     "), false);
-        }
+        oled_write_ln_P(PSTR("     "), false);
     }
 
     // Print current layer
     switch (get_highest_layer(layer_state)) {
         case _DEF:
-            oled_write_P(PSTR("Alpha"), false);
-            break;
-        case _NAV:
-            oled_write_P(PSTR("Nav  "), false);
+            oled_write_P(PSTR("D E F"), false);
             break;
         case _SYM:
-            oled_write_P(PSTR("Sym  "), false);
+            oled_write_P(PSTR("S Y M"), false);
+            break;
+        case _NAV:
+            oled_write_P(PSTR("N A V"), false);
+            break;
+        case _NUM:
+            oled_write_P(PSTR("N U M"), false);
+            break;
+        case _MOUSE:
+            oled_write_P(PSTR("MOUSE"), false);
+            break;
+        case _SCRL:
+            oled_write_P(PSTR("SCRLL"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adj  "), false);
+            oled_write_P(PSTR("A D J"), false);
             break;
         default:
-            oled_write_P(PSTR("???  "), false);
+            oled_write_P(PSTR("???   "), false);
     }
 }
 
