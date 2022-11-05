@@ -99,7 +99,7 @@ enum userspace_layers {
 #define BASE_F       KC_F
 
 #define BASE_Z       SFT_T(KC_Z)
-#define BASE_X       CMD_T(KC_X)
+#define BASE_X       CTL_T(KC_X)
 #define BASE_C       KC_C
 #define BASE_V       KC_V
 
@@ -197,8 +197,8 @@ enum userspace_layers {
 
 #define _________________NAVI_5_R0_________________ ___________________________________________
 #define _________________NAVI_5_R1_________________ XXXXXXX, KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX
-#define _________________NAVI_5_R2_________________ KC_LBRC, KC_LEFT, KC_DOWN, KC_RIGHT,  XXXXXXX
-#define _________________NAVI_5_R3_________________ KC_RBRC, BRCL,    BRCR,    UK_SELWRD, SW_LANG
+#define _________________NAVI_5_R2_________________ KC_LBRC, KC_LEFT, KC_DOWN, KC_RIGHT,  SW_LANG
+#define _________________NAVI_5_R3_________________ KC_RBRC, BRCL,    BRCR,    UK_SELWRD, XXXXXXX
 
 #define _________________NAVI_6_L0_________________ _______,   _________________NAVI_5_L0_________________
 #define _________________NAVI_6_L1_________________ _______,   _________________NAVI_5_L1_________________
