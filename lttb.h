@@ -93,23 +93,29 @@ enum userspace_layers {
 #define BASE_Q       KC_Q
 #define BASE_W       KC_W
 
-#define BASE_A       CTL_T(KC_A)
-#define BASE_S       OPT_T(KC_S)
-#define BASE_D       CMD_T(KC_D)
-#define BASE_F       SFT_T(KC_F)
+#define BASE_A       KC_A
+#define BASE_S       KC_S
+#define BASE_D       KC_D
+#define BASE_F       KC_F
 
-#define BASE_Z       KC_Z
-#define BASE_X       LT(_MOUSE,KC_X)
+#define BASE_Z       SFT_T(KC_Z)
+#define BASE_X       CMD_T(KC_X)
 #define BASE_C       KC_C
+#define BASE_V       KC_V
+
 
 #define BASE_P       KC_P
 #define BASE_O       KC_O
 
-#define BASE_J       SFT_T(KC_J)
-#define BASE_K       CMD_T(KC_K)
-#define BASE_L       OPT_T(KC_L)
+#define BASE_J       KC_J
+#define BASE_K       KC_K
+#define BASE_L       KC_L
 #define BASE_SCLN    CTL_T(KC_SCLN)
-#define BASE_SLSH    KC_SLSH
+
+#define BASE_M       KC_M
+#define BASE_COMM    CMD_T(KC_COMM)
+#define BASE_DOT     OPT_T(KC_DOT)
+#define BASE_SLSH    SFT_T(KC_SLSH)
 
 #define BASE_THUMB_L LT(_NAV,KC_SPC)
 #define BASE_THUMB_R LT(_SYM,KC_ENT)
@@ -119,12 +125,12 @@ enum userspace_layers {
 #define _________________BASE_5_L0_________________ _________________NUMBRS_H1_________________
 #define _________________BASE_5_L1_________________ BASE_Q, BASE_W, KC_E,   KC_R,   KC_T
 #define _________________BASE_5_L2_________________ BASE_A, BASE_S, BASE_D, BASE_F, KC_G
-#define _________________BASE_5_L3_________________ BASE_Z, BASE_X, BASE_C, KC_V,   KC_B
+#define _________________BASE_5_L3_________________ BASE_Z, BASE_X, BASE_C, BASE_V, KC_B
 
 #define _________________BASE_5_R0_________________ _________________NUMBRS_H2_________________
-#define _________________BASE_5_R1_________________ KC_Y, KC_U,   KC_I,    BASE_O, BASE_P
-#define _________________BASE_5_R2_________________ KC_H, BASE_J, BASE_K,  BASE_L, BASE_SCLN
-#define _________________BASE_5_R3_________________ KC_N, KC_M,   KC_COMM, KC_DOT, BASE_SLSH
+#define _________________BASE_5_R1_________________ KC_Y, KC_U,   KC_I,      BASE_O,   BASE_P
+#define _________________BASE_5_R2_________________ KC_H, BASE_J, BASE_K,    BASE_L,   BASE_SCLN
+#define _________________BASE_5_R3_________________ KC_N, BASE_M, BASE_COMM, BASE_DOT, BASE_SLSH
 
 #define _________________BASE_6_L0_________________ KC_GRV,          _________________BASE_5_L0_________________
 #define _________________BASE_6_L1_________________ LT(_NUM,KC_TAB), _________________BASE_5_L1_________________
