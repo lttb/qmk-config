@@ -131,6 +131,7 @@ bool achordion_chord(
     switch (tap_hold_keycode) {
         case BASE_THUMB_L:
         case BASE_THUMB_R:
+        case BASE_Q:
         case BASE_ESC:
         case BASE_Z:
         case BASE_X:
@@ -148,6 +149,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   switch (tap_hold_keycode) {
         case BASE_THUMB_L:
         case BASE_THUMB_R:
+        case BASE_Q:
         case BASE_ESC:
         case BASE_Z:
         case BASE_X:

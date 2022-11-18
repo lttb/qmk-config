@@ -90,7 +90,7 @@ enum userspace_layers {
 
 // Base Layer {{{
 
-#define BASE_Q       KC_Q
+#define BASE_Q       CTL_T(KC_Q)
 #define BASE_W       KC_W
 
 #define BASE_A       KC_A
@@ -121,6 +121,7 @@ enum userspace_layers {
 #define BASE_THUMB_R LT(_SYM,KC_ENT)
 
 #define BASE_ESC     CTL_T(KC_ESC)
+#define BASE_TAB     LT(_NUM,KC_TAB)
 
 #define _________________BASE_5_L0_________________ _________________NUMBRS_H1_________________
 #define _________________BASE_5_L1_________________ BASE_Q, BASE_W, KC_E,   KC_R,   KC_T
@@ -132,10 +133,10 @@ enum userspace_layers {
 #define _________________BASE_5_R2_________________ KC_H, BASE_J, BASE_K,    BASE_L,   BASE_SCLN
 #define _________________BASE_5_R3_________________ KC_N, BASE_M, BASE_COMM, BASE_DOT, BASE_SLSH
 
-#define _________________BASE_6_L0_________________ KC_GRV,          _________________BASE_5_L0_________________
-#define _________________BASE_6_L1_________________ LT(_NUM,KC_TAB), _________________BASE_5_L1_________________
-#define _________________BASE_6_L2_________________ BASE_ESC,        _________________BASE_5_L2_________________
-#define _________________BASE_6_L3_________________ KC_LSFT,         _________________BASE_5_L3_________________
+#define _________________BASE_6_L0_________________ KC_GRV,   _________________BASE_5_L0_________________
+#define _________________BASE_6_L1_________________ BASE_TAB, _________________BASE_5_L1_________________
+#define _________________BASE_6_L2_________________ BASE_ESC, _________________BASE_5_L2_________________
+#define _________________BASE_6_L3_________________ KC_LSFT,  _________________BASE_5_L3_________________
 
 #define _________________BASE_6_R0_________________ _________________BASE_5_R0_________________, KC_MINS
 #define _________________BASE_6_R1_________________ _________________BASE_5_R1_________________, KC_BSPC
