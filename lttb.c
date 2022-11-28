@@ -40,7 +40,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     update_swapper(
         &sw_appl_active, KC_LGUI, KC_TAB, false, SW_APPL,
-        keycode, is_swapper_skip || keycode == NAVI_X || keycode == TAB_BACK, record
+        keycode, is_swapper_skip || keycode == NAVI_X || keycode == KC_Q || keycode == TAB_BACK, record
     );
     if (sw_appl_active && keycode == NAVI_X) {
         if (record->event.pressed) {
@@ -131,10 +131,7 @@ bool achordion_chord(
     switch (tap_hold_keycode) {
         case BASE_THUMB_L:
         case BASE_THUMB_R:
-        case BASE_Q:
         case BASE_ESC:
-        case BASE_Z:
-        case BASE_X:
         case BASE_COMM:
         case BASE_DOT:
         case BASE_SLSH:
@@ -149,10 +146,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   switch (tap_hold_keycode) {
         case BASE_THUMB_L:
         case BASE_THUMB_R:
-        case BASE_Q:
         case BASE_ESC:
-        case BASE_Z:
-        case BASE_X:
         case BASE_COMM:
         case BASE_DOT:
         case BASE_SLSH:
