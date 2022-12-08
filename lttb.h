@@ -54,8 +54,6 @@ enum userspace_layers {
 #define TAB_BACK  S(KC_TAB)
 // #define TABL      C(S(KC_TAB))
 // #define TABR      C(KC_TAB)
-#define BRCL      G(KC_LCBR)
-#define BRCR      G(KC_RCBR)
 #define SPCL      A(G(KC_LEFT))
 #define SPC_R     A(G(KC_RGHT))
 #define WORD_PREV A(KC_LEFT)
@@ -190,6 +188,10 @@ enum userspace_layers {
 // Navigation Layer {{{
 
 #define NAVI_X G(KC_X)
+#define GLBR   G(KC_LBRC)
+#define GRBR   G(KC_RBRC)
+#define SGLBR  S(GLBR)
+#define SGRBR  S(GRBR)
 
 #define _________________NAVI_5_L0_________________ ___________________________________________
 #define _________________NAVI_5_L1_________________ KC_Q,           SW_APPL,        SW_WIND,        TAB_BACK,      XXXXXXX
@@ -198,8 +200,8 @@ enum userspace_layers {
 
 #define _________________NAVI_5_R0_________________ ___________________________________________
 #define _________________NAVI_5_R1_________________ XXXXXXX, KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX
-#define _________________NAVI_5_R2_________________ KC_LCBR, KC_LEFT, KC_DOWN, KC_RIGHT,  SW_LANG
-#define _________________NAVI_5_R3_________________ KC_RCBR, BRCL,    BRCR,    UK_SELWRD, XXXXXXX
+#define _________________NAVI_5_R2_________________ GLBR,    KC_LEFT, KC_DOWN, KC_RIGHT,  SW_LANG
+#define _________________NAVI_5_R3_________________ GRBR,    SGLBR,   SGRBR,   UK_SELWRD, XXXXXXX
 
 #define _________________NAVI_6_L0_________________ _______,   _________________NAVI_5_L0_________________
 #define _________________NAVI_6_L1_________________ _______,   _________________NAVI_5_L1_________________
