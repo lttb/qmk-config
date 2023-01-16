@@ -165,7 +165,7 @@ enum userspace_layers {
 #define _________________SYMB_5_R0_________________ ___________________________________________
 #define _________________SYMB_5_R1_________________ KC_CIRC, KC_SLSH, KC_RCBR, KC_GT,    KC_BSLS
 #define _________________SYMB_5_R2_________________ KC_PIPE, KC_COLN, KC_RPRN, KC_RBRC,  KC_QUES
-#define _________________SYMB_5_R3_________________ KC_PERC, KC_AT,   KC_TAG,  KC_HASH,  _______
+#define _________________SYMB_5_R3_________________ KC_PERC, KC_AT,   KC_TAG,  KC_HASH,  KC_SCLN
 
 #define _________________SYMB_6_L0_________________ _______, _________________SYMB_5_L0_________________
 #define _________________SYMB_6_L1_________________ _______, _________________SYMB_5_L1_________________
