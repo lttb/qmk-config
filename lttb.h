@@ -197,13 +197,13 @@ enum userspace_layers {
 
 #define _________________NAVI_5_L0_________________ ___________________________________________
 #define _________________NAVI_5_L1_________________ KC_Q,           SW_APPL,        SW_WIND,        TAB_BACK,      XXXXXXX
-#define _________________NAVI_5_L2_________________ CTL_T(KC_CAPS), OPT_T(KC_PGUP), GUI_T(KC_PGDN), SFT_T(KC_TAB), CAPS_WORD
+#define _________________NAVI_5_L2_________________ CTL_T(KC_CAPS), OPT_T(KC_PGUP), GUI_T(KC_PGDN), SFT_T(KC_TAB), SW_LANG
 #define _________________NAVI_5_L3_________________ G(KC_Z),        NAVI_X,         G(KC_C),        G(KC_V),       G(KC_ESC)
 
 #define _________________NAVI_5_R0_________________ ___________________________________________
 #define _________________NAVI_5_R1_________________ XXXXXXX, KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX
-#define _________________NAVI_5_R2_________________ GLBR,    KC_LEFT, KC_DOWN, KC_RIGHT,  XXXXXXX
-#define _________________NAVI_5_R3_________________ GRBR,    SGLBR,   SGRBR,   UK_SELWRD, XXXXXXX
+#define _________________NAVI_5_R2_________________ GLBR,    KC_LEFT, KC_DOWN, KC_RIGHT,  UK_SELWRD
+#define _________________NAVI_5_R3_________________ GRBR,    SGLBR,   SGRBR,   CAPS_WORD, XXXXXXX
 
 #define _________________NAVI_6_L0_________________ _______,   _________________NAVI_5_L0_________________
 #define _________________NAVI_6_L1_________________ _______,   _________________NAVI_5_L1_________________

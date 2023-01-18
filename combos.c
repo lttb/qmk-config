@@ -5,8 +5,6 @@
 enum combo_events {
     MOUSE_KEYS_COMBO,
 
-    LANG_SWITCH_COMBO,
-
     NUM_COMBO,
     NUM_COMBO_L,
     NUM_COMBO_R,
@@ -52,8 +50,6 @@ enum combo_events {
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
-
-const uint16_t PROGMEM lang_switch_combo[] = {BASE_G, BASE_H, COMBO_END};
 
 const uint16_t PROGMEM mouse_keys_combo[] = {BASE_X, BASE_C, COMBO_END};
 
@@ -103,8 +99,6 @@ const uint16_t PROGMEM sft_cmd_alt_ctl_combo_l[] = {BASE_A,    BASE_S, BASE_D, B
 const uint16_t PROGMEM sft_cmd_alt_ctl_combo_r[] = {BASE_SCLN, BASE_L, BASE_K, BASE_J, COMBO_END};
 
 combo_t key_combos[] = {
-    [LANG_SWITCH_COMBO] = COMBO(lang_switch_combo, G(KC_SPC)),
-
     [MOUSE_KEYS_COMBO] = COMBO(mouse_keys_combo, TG(_MOUSE)),
 
     // [NUM_COMBO] = COMBO(num_combo, MO(_NUM)),
