@@ -35,7 +35,7 @@ enum userspace_layer_codes {
 
     UK_SELWRD,
 
-    NEW_SAFE_RANGE
+    LTTB_NEW_SAFE_RANGE
 };
 
 enum userspace_layers {
@@ -283,7 +283,7 @@ enum userspace_layers {
 
 // }}}
 
-// Scroll Layer {{{ 
+// Scroll Layer {{{
 
 #define _________________SCRL_5_L0_________________ ___________________________________________
 #define _________________SCRL_5_L1_________________ _______, _______, KC_ACL0, KC_ACL2, _______
