@@ -64,7 +64,7 @@ enum userspace_layers {
 #define OS_ALT OSM(MOD_LALT)
 #define OS_GUI OSM(MOD_LGUI)
 
-// Query {{{
+// Querty {{{
 
 #define __________________XXXXXXX__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ___________________________________________ _______, _______, _______, _______, _______
