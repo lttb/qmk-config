@@ -99,20 +99,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t* record) {
-  // If you quickly hold a tap-hold key after tapping it, the tap action is
-  // repeated. Key repeating is useful e.g. for Vim navigation keys, but can
-  // lead to missed triggers in fast typing. Here, returning true means we
-  // instead want to "force hold" and disable key repeating.
-  switch (keycode) {
-    case BASE_D:
-    case BASE_J:
-    case BASE_K:
-        return false;  // Enable key repeating.
-    default:
-        return true;  // Otherwise, force hold and disable key repeating.
-  }
-}
+// bool get_tapping_force_hold(uint16_t keycode, keyrecord_t* record) {
+//   // If you quickly hold a tap-hold key after tapping it, the tap action is
+//   // repeated. Key repeating is useful e.g. for Vim navigation keys, but can
+//   // lead to missed triggers in fast typing. Here, returning true means we
+//   // instead want to "force hold" and disable key repeating.
+//   switch (keycode) {
+//     case BASE_D:
+//     case BASE_J:
+//     case BASE_K:
+//         return false;  // Enable key repeating.
+//     default:
+//         return true;  // Otherwise, force hold and disable key repeating.
+//   }
+// }
 
 // layer_state_t layer_state_set_user(layer_state_t state) {
 //     return update_tri_layer_state(state, _SYM, _NAV, _NUM);
@@ -163,26 +163,46 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   return 800;  // Otherwise use a timeout of 800 ms.
 }
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // case BASE_Z:
-        case BASE_SLSH:
-        // case BASE_THUMB_L:
-        case BASE_THUMB_R:
-            // Immediately select the hold action when another key is pressed.
-            return true;
-        default:
-            // Do not select the hold action when another key is pressed.
-            return false;
-    }
-}
+// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         // case BASE_Z:
+//         case BASE_SLSH:
+//         // case BASE_THUMB_L:
+//         case BASE_THUMB_R:
+//             // Immediately select the hold action when another key is pressed.
+//             return true;
+//         default:
+//             // Do not select the hold action when another key is pressed.
+//             return false;
+//     }
+// }
 
-bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+// bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         // case BASE_THUMB_L:
+//         case BASE_THUMB_R:
+//             return false;
+//         default:
+//             return true;
+//     }
+// }
+
+bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
-        // case BASE_THUMB_L:
-        case BASE_THUMB_R:
-            return false;
-        default:
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+        case KC_1 ... KC_0:
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
             return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+        case KC_MINS:
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
     }
 }
