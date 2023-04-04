@@ -162,7 +162,7 @@ enum userspace_layers {
 #define _________________SYMB_5_L0_________________ ___________________________________________
 #define _________________SYMB_5_L1_________________ KC_EXLM, KC_AT,   KC_LCBR, KC_DLR,  KC_PERC
 #define _________________SYMB_5_L2_________________ KC_GRV,  KC_LBRC, KC_LPRN, KC_EQL,  KC_TAG
-#define _________________SYMB_5_L3_________________ KC_TILD, KC_COLN, KC_MINS, KC_PLUS, KC_UNDS
+#define _________________SYMB_5_L3_________________ KC_TILD, KC_COLN, KC_PLUS, KC_MINS, KC_UNDS
 
 #define _________________SYMB_5_R0_________________ ___________________________________________
 #define _________________SYMB_5_R1_________________ KC_CIRC, KC_AMPR, KC_RCBR, KC_GT,   KC_BSLS
