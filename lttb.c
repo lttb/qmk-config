@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 #include "./features/swapper.h"
-#include "./features/achordion.h"
+// #include "./features/achordion.h"
 #include "./features/select_word.h"
 
 #include "lttb.h"
@@ -94,98 +94,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
 
-    if (!process_achordion(keycode, record)) { return false; }
+    // if (!process_achordion(keycode, record)) { return false; }
 
     return true;
 }
-
-// bool get_tapping_force_hold(uint16_t keycode, keyrecord_t* record) {
-//   // If you quickly hold a tap-hold key after tapping it, the tap action is
-//   // repeated. Key repeating is useful e.g. for Vim navigation keys, but can
-//   // lead to missed triggers in fast typing. Here, returning true means we
-//   // instead want to "force hold" and disable key repeating.
-//   switch (keycode) {
-//     case BASE_D:
-//     case BASE_J:
-//     case BASE_K:
-//         return false;  // Enable key repeating.
-//     default:
-//         return true;  // Otherwise, force hold and disable key repeating.
-//   }
-// }
-
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//     return update_tri_layer_state(state, _SYM, _NAV, _NUM);
-// }
-
-void matrix_scan_user(void) {
-  achordion_task();
-}
-
-bool achordion_chord(
-    uint16_t tap_hold_keycode,
-    keyrecord_t* tap_hold_record,
-    uint16_t other_keycode,
-    keyrecord_t* other_record
-) {
-    switch (tap_hold_keycode) {
-        case BASE_THUMB_L:
-        case BASE_THUMB_R:
-        case BASE_Q:
-        case BASE_ESC:
-        case BASE_Z:
-        case BASE_X:
-        case BASE_COMM:
-        case BASE_DOT:
-        case BASE_SLSH:
-        case BASE_SCLN:
-            return true;
-    }
-
-    return achordion_opposite_hands(tap_hold_record, other_record);
-}
-
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  switch (tap_hold_keycode) {
-        case BASE_THUMB_L:
-        case BASE_THUMB_R:
-        case BASE_Q:
-        case BASE_ESC:
-        case BASE_Z:
-        case BASE_X:
-        case BASE_COMM:
-        case BASE_DOT:
-        case BASE_SLSH:
-        case BASE_SCLN:
-            return 0;  // Bypass Achordion for these keys.
-  }
-
-  return 800;  // Otherwise use a timeout of 800 ms.
-}
-
-// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-//         // case BASE_Z:
-//         case BASE_SLSH:
-//         // case BASE_THUMB_L:
-//         case BASE_THUMB_R:
-//             // Immediately select the hold action when another key is pressed.
-//             return true;
-//         default:
-//             // Do not select the hold action when another key is pressed.
-//             return false;
-//     }
-// }
-
-// bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-//         // case BASE_THUMB_L:
-//         case BASE_THUMB_R:
-//             return false;
-//         default:
-//             return true;
-//     }
-// }
 
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {

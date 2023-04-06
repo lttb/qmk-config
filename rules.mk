@@ -1,5 +1,5 @@
 SRC += ./features/swapper.c
-SRC += ./features/achordion.c
+# SRC += ./features/achordion.c
 SRC += ./features/select_word.c
 SRC += lttb.c
 SRC += combos.c
