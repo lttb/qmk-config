@@ -6,20 +6,6 @@
 
 #include "lttb.h"
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case OS_CTL:
-           return 500;
-        case OS_ALT:
-           return 500;
-        case OS_GUI:
-           return 500;
-        case OS_SFT:
-           return 500;
-        default:
-            return TAPPING_TERM;
-    }
-}
 
 bool sw_appl_active = false;
 bool sw_wind_active = false;
@@ -116,5 +102,33 @@ bool caps_word_press_user(uint16_t keycode) {
 
         default:
             return false;  // Deactivate Caps Word.
+    }
+}
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case OS_CTL:
+        case OS_ALT:
+        case OS_GUI:
+        case OS_SFT:
+        case BASE_C:
+           return 500;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch(keycode) {
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+            switch (keycode) {
+                case BASE_C:
+                    return false;
+                default:
+                    return true;
+            }
+        default:
+            return false;
     }
 }
