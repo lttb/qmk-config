@@ -113,6 +113,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case OS_SFT:
         case BASE_C:
            return 500;
+        case BASE_ESC:
+           return 150;
         default:
             return TAPPING_TERM;
     }
