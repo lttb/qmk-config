@@ -111,20 +111,26 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case OS_ALT:
         case OS_GUI:
         case OS_SFT:
-        case BASE_C:
-           return 500;
         case BASE_ESC:
-           return 150;
+           return 500;
         default:
             return TAPPING_TERM;
     }
 }
 
-
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    if (keycode == BASE_C || keycode == BASE_X) {
-        return false;
+    switch(keycode) {
+        // Capture all mod-tap keycodes.
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+            if (keycode == BASE_C || keycode == BASE_X) {
+                // Disable HOLD_ON_OTHER_KEY_PRESS
+                // aka enable IGNORE_MOD_TAP_INTERRUPT
+                return false;
+            } else {
+                // Enable HOLD_ON_OTHER_KEY_PRESS for every other mod-tap keycode.
+                return true;
+            }
+        default:
+            return false;
     }
-
-    return true;
 }
