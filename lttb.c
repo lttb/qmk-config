@@ -124,6 +124,8 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case BASE_X:
         case BASE_COMM:
         case BASE_DOT:
+        case BASE_Q:
+        case BASE_P:
             return false;
         default:
             return true;
