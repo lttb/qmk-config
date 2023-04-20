@@ -205,7 +205,7 @@ enum userspace_layers {
 #define _________________NAVI_5_L3_________________ G(KC_Z), NAVI_X,  G(KC_C), G(KC_V),  G(KC_ESC)
 
 #define _________________NAVI_5_R0_________________ ___________________________________________
-#define _________________NAVI_5_R1_________________ XXXXXXX,   KC_DEL,  KC_UP,   KC_BSPC,  SW_LANG
+#define _________________NAVI_5_R1_________________ SW_LANG,   KC_DEL,  KC_UP,   KC_BSPC,  XXXXXXX
 #define _________________NAVI_5_R2_________________ UK_SELWRD, KC_LEFT, KC_DOWN, KC_RIGHT, _______
 #define _________________NAVI_5_R3_________________ CW_TOGG,   SGLBR,   SGRBR,   GLBR,     GRBR
 
@@ -287,7 +287,7 @@ enum userspace_layers {
 
 // }}}
 
-// Scroll Layer {{{ 
+// Scroll Layer {{{
 
 #define _________________SCRL_5_L0_________________ ___________________________________________
 #define _________________SCRL_5_L1_________________ _______, _______, KC_ACL0, KC_ACL2, _______
