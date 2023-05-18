@@ -25,7 +25,7 @@ enum userspace_layer_codes {
     SYM,
     NAV,
     NUM,
-    ADJUST,
+    ADJ,
 
     SW_APPL,
     SW_LANG,
@@ -40,12 +40,12 @@ enum userspace_layer_codes {
 
 enum userspace_layers {
     _DEF,
-    _MOUSE,
-    _SCRL,
-    _NUM,
     _SYM,
     _NAV,
-    _ADJUST
+    _ADJ,
+    _NUM,
+    _MOUSE,
+    _SCRL,
 };
 
 #define FWD       G(KC_RBRC)

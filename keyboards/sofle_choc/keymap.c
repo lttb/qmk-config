@@ -116,7 +116,7 @@ static void print_status_narrow(void) {
         case _SCRL:
             oled_write_P(PSTR("SCRLL"), false);
             break;
-        case _ADJUST:
+        case _ADJ:
             oled_write_P(PSTR("A D J"), false);
             break;
         default:
