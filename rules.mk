@@ -2,7 +2,10 @@ SRC += ./features/swapper.c
 # SRC += ./features/achordion.c
 SRC += ./features/select_word.c
 SRC += lttb.c
-SRC += combos.c
+# SRC += combos.c
+
+# @see https://github.com/qmk/qmk_firmware/issues/21137
+INTROSPECTION_KEYMAP_C = combos.c
 
 # Enable link time optimization
 # Trade longer compile time for smaller firmware size
