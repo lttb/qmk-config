@@ -97,7 +97,7 @@ enum userspace_layers {
 #define BASE_F       KC_F
 #define BASE_G       KC_G
 
-#define BASE_LSFT    KC_LSFT
+#define BASE_SFT     SFT_T(KC_CAPS)
 
 #define BASE_Z       SFT_T(KC_Z)
 #define BASE_X       OPT_T(KC_X)
@@ -140,7 +140,7 @@ enum userspace_layers {
 #define _________________BASE_6_L0_________________ KC_GRV,   _________________BASE_5_L0_________________
 #define _________________BASE_6_L1_________________ BASE_TAB, _________________BASE_5_L1_________________
 #define _________________BASE_6_L2_________________ BASE_ESC, _________________BASE_5_L2_________________
-#define _________________BASE_6_L3_________________ MO(_NUM), _________________BASE_5_L3_________________
+#define _________________BASE_6_L3_________________ BASE_SFT, _________________BASE_5_L3_________________
 
 #define _________________BASE_6_R0_________________ _________________BASE_5_R0_________________, KC_MINS
 #define _________________BASE_6_R1_________________ _________________BASE_5_R1_________________, KC_BSPC
@@ -201,7 +201,7 @@ enum userspace_layers {
 
 #define _________________NAVI_5_L0_________________ ___________________________________________
 #define _________________NAVI_5_L1_________________ KC_Q,    SW_APPL, SW_WIND, TAB_BACK, XXXXXXX
-#define _________________NAVI_5_L2_________________ OS_CTL,  OS_ALT,  OS_GUI,  OS_SFT,   XXXXXXX
+#define _________________NAVI_5_L2_________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,  XXXXXXX
 #define _________________NAVI_5_L3_________________ G(KC_Z), NAVI_X,  G(KC_C), G(KC_V),  G(KC_ESC)
 
 #define _________________NAVI_5_R0_________________ ___________________________________________
