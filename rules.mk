@@ -11,10 +11,6 @@ INTROSPECTION_KEYMAP_C = combos.c
 # Trade longer compile time for smaller firmware size
 LTO_ENABLE = yes
 
-# Change keymaps without flashing
-# https://caniusevia.com/
-VIA_ENABLE = no
-
 # Enable audio keys and system control
 EXTRAKEY_ENABLE = yes
 
@@ -30,5 +26,5 @@ COMMAND_ENABLE = no
 CAPS_WORD_ENABLE = yes
 
 ifeq ($(strip $(KEYBOARD)), sofle_choc)
-
+  VIA_ENABLE = no
 endif

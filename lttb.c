@@ -6,7 +6,6 @@
 
 #include "lttb.h"
 
-
 bool sw_appl_active = false;
 bool sw_wind_active = false;
 bool sw_lang_active = false;
@@ -26,16 +25,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     update_swapper(
         &sw_appl_active, KC_LGUI, KC_TAB, false, SW_APPL,
-        keycode, is_swapper_skip || keycode == NAVI_X || keycode == KC_Q || keycode == TAB_BACK, record
+        keycode, is_swapper_skip || keycode == KC_Q || keycode == TAB_BACK, record
     );
-    if (sw_appl_active && keycode == NAVI_X) {
-        if (record->event.pressed) {
-            unregister_code(KC_X);
-            register_code(KC_Q);
-        } else {
-            unregister_code(KC_Q);
-        }
-    }
+    // if (sw_appl_active && keycode == NAVI_X) {
+    //     if (record->event.pressed) {
+    //         unregister_code(KC_X);
+    //         register_code(KC_Q);
+    //     } else {
+    //         unregister_code(KC_Q);
+    //     }
+    // }
 
     update_swapper(
         &sw_wind_active, KC_LGUI, KC_GRV, false, SW_WIND,
@@ -105,29 +104,3 @@ bool caps_word_press_user(uint16_t keycode) {
     }
 }
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case OS_CTL:
-        case OS_ALT:
-        case OS_GUI:
-        case OS_SFT:
-           return 500;
-        default:
-            return TAPPING_TERM;
-    }
-}
-
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case BASE_THUMB_L:
-        case BASE_C:
-        case BASE_X:
-        case BASE_COMM:
-        case BASE_DOT:
-        case BASE_Q:
-        case BASE_P:
-            return false;
-        default:
-            return true;
-    }
-}
