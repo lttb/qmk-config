@@ -88,7 +88,7 @@ enum userspace_layers {
 
 // Base Layer {{{
 
-#define BASE_Q       LT(_NUM,KC_Q)
+#define BASE_Q       KC_Q
 #define BASE_W       KC_W
 
 #define BASE_A       KC_A
@@ -99,13 +99,13 @@ enum userspace_layers {
 
 #define BASE_SFT     SFT_T(KC_CAPS)
 
-#define BASE_Z       SFT_T(KC_Z)
-#define BASE_X       OPT_T(KC_X)
-#define BASE_C       CMD_T(KC_C)
+#define BASE_Z       KC_Z
+#define BASE_X       KC_X
+#define BASE_C       KC_C
 #define BASE_V       KC_V
 
 
-#define BASE_P       LT(_NUM,KC_P)
+#define BASE_P       KC_P
 #define BASE_O       KC_O
 
 #define BASE_H       KC_H
@@ -119,7 +119,7 @@ enum userspace_layers {
 #define BASE_DOT     OPT_T(KC_DOT)
 #define BASE_SLSH    SFT_T(KC_SLSH)
 
-#define BASE_RSFT    LT(_NUM, KC_SCLN)
+#define BASE_RSFT    SFT_T(KC_SCLN)
 
 #define BASE_THUMB_L LT(_NAV,KC_SPC)
 #define BASE_THUMB_R MO(_SYM)
