@@ -97,7 +97,7 @@ enum userspace_layers {
 #define BASE_F       KC_F
 #define BASE_G       KC_G
 
-#define BASE_SFT     SFT_T(KC_CAPS)
+#define BASE_SFT     KC_LSFT
 
 #define BASE_Z       KC_Z
 #define BASE_X       KC_X
