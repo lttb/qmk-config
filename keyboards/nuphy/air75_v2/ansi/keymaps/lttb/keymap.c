@@ -25,9 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_ESC, 	KC_BRID,  	KC_BRIU,  	MAC_TASK, 	MAC_SEARCH, MAC_VOICE,  MAC_DND,    KC_MPRV,  	KC_MPLY,  	KC_MNXT, 	KC_MUTE, 	KC_VOLD, 	KC_VOLU, 	MAC_PRTA,	KC_INS,		KC_DEL,
 	KC_GRV, 	KC_1,   	KC_2,   	KC_3,  		KC_4,   	KC_5,   	KC_6,   	KC_7,   	KC_8,   	KC_9,  		KC_0,   	KC_MINS,	KC_EQL, 				KC_BSPC,	KC_PGUP,
 	KC_TAB, 	KC_Q,   	KC_W,   	KC_E,  		KC_R,   	KC_T,   	KC_Y,   	KC_U,   	KC_I,   	KC_O,  		KC_P,   	KC_LBRC,	KC_RBRC, 				KC_BSLS,	KC_PGDN,
-	KC_CAPS,	KC_A,   	KC_S,   	KC_D,  		KC_F,   	KC_G,   	KC_H,   	KC_J,   	KC_K,   	KC_L,  		KC_SCLN,	KC_QUOT, 	 						KC_ENT,		KC_HOME,
-	KC_LSFT,				KC_Z,   	KC_X,   	KC_C,  		KC_V,   	KC_B,   	KC_N,   	KC_M,   	KC_COMM,	KC_DOT,		KC_SLSH,				KC_RSFT,	KC_UP,		KC_END,
-	KC_LCTL,	KC_LALT,	KC_LGUI,										KC_SPC, 							KC_RGUI,	MO(1),   	KC_RCTL,				KC_LEFT,	KC_DOWN,    KC_RGHT),
+	BASE_ESC, KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_ENT,   KC_QUOT, 	 						KC_ENT,		KC_HOME,
+	KC_LSFT,				KC_Z,   	KC_X,   	KC_C,  		KC_V,   	KC_B,   	KC_N,   	KC_M,   	KC_COMM,	KC_DOT,		BASE_SLSH,				KC_RSFT,	KC_UP,		KC_END,
+	KC_LCTL,	KC_LALT,	KC_LGUI,										BASE_THUMB_L, 							BASE_THUMB_R,	MO(1),   	KC_RCTL,				KC_LEFT,	KC_DOWN,    KC_RGHT),
 
 // layer Mac Fn
 [1] = LAYOUT_ansi_84(
@@ -64,4 +64,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	_______,	_______,   	_______,   	_______,  	_______,   	_______,   	_______,   	_______,   	_______,   	_______,  	_______,	_______, 	 						_______,	_______,
 	_______,				_______,   	_______,   	_______,  	_______,   	_______,   	_______,   	_______,   	SIDE_SPD,	SIDE_SPI,	_______,				_______,	SIDE_VAI,	_______,
 	_______,	_______,	_______,										_______, 							_______,	MO(4),   	_______,				SIDE_MOD,	SIDE_VAD,   SIDE_HUI)
+
+[_NAV] = LAYOUT_ansi_84(
+    KC_ESC,    KC_BRID,        KC_BRIU,        KC_MCTL,        KC_LNPD,       RGB_VAD,   RGB_VAI,   KC_MPRV, KC_MPLY, KC_MNXT,   KC_MUTE,   KC_VOLD, KC_VOLU, KC_SNAP, KC_DEL, RGB_MOD,
+    KC_GRV,    KC_1,           KC_2,           KC_3,           KC_4,          KC_5,      KC_6,      KC_7,    KC_8,    KC_9,      KC_0,      KC_MINS, KC_EQL,  KC_BSPC,         KC_PGUP,
+    KC_TRNS,   KC_Q,           SW_APPL,        SW_WIND,        TAB_BACK,      XXXXXXX,   XXXXXXX,   KC_DEL,  KC_UP,   KC_BSPC,   XXXXXXX,   KC_LBRC, KC_RBRC, KC_BSLS,         KC_PGDN,
+    G(KC_ESC), CTL_T(KC_CAPS), OPT_T(KC_PGUP), GUI_T(KC_PGDN), SFT_T(KC_TAB), SW_LANG,   GLBR,      KC_LEFT, KC_DOWN, KC_RIGHT,  UK_SELWRD, KC_QUOT,          KC_ENT,          KC_HOME,
+    KC_TRNS,                   G(KC_Z),        NAVI_X,         G(KC_C),       G(KC_V),   G(KC_ESC), GRBR,    SGLBR,   SGRBR,     CAPS_WORD, KC_SLSH,          KC_RSFT, KC_UP,  KC_END,
+    KC_TRNS,   KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,       KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
