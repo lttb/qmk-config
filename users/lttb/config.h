@@ -1,3 +1,6 @@
+#define RGB_DISABLE_TIMEOUT 900000 // milliseconds
+#define RGB_DISABLE_WHEN_USB_SUSPENDED 1
+
 // #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 #define COMBO_TERM 25
