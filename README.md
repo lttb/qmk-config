@@ -6,7 +6,7 @@ Related:
 
 Keyboards:
 
-```
+```sh
 qmk compile -kb sofle_choc -km lttb
 qmk compile -kb planck/ez -km lttb
 qmk compile -kb redox_w -km lttb
