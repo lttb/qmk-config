@@ -35,7 +35,7 @@ enum userspace_layer_codes {
 
     UK_SELWRD,
 
-    NEW_SAFE_RANGE
+    LTTB_NEW_SAFE_RANGE
 };
 
 enum userspace_layers {
@@ -150,7 +150,7 @@ enum userspace_layers {
 #define ____BASE_2_LT____                           KC_LGUI, BASE_THUMB_L
 #define ____BASE_2_RT____                           BASE_THUMB_R, KC_HYPR
 
-#define __________BASE_3_LT___________              MO(_NUM), ____BASE_2_LT____
+#define __________BASE_3_LT___________              KC_LALT, ____BASE_2_LT____
 #define __________BASE_3_RT___________              ____BASE_2_RT____, KC_LCTL
 
 // }}}
