@@ -99,69 +99,62 @@ const uint16_t PROGMEM sft_cmd_alt_ctl_combo_l[] = {BASE_A,    BASE_S, BASE_D, B
 const uint16_t PROGMEM sft_cmd_alt_ctl_combo_r[] = {BASE_SCLN, BASE_L, BASE_K, BASE_J, COMBO_END};
 
 combo_t key_combos[] = {
-    [MOUSE_KEYS_COMBO] = COMBO(mouse_keys_combo, TG(_MOUSE)),
+    /*[MOUSE_KEYS_COMBO] = COMBO(mouse_keys_combo, TG(_MOUSE)),*/
 
     // [NUM_COMBO] = COMBO(num_combo, MO(_NUM)),
-    [NUM_COMBO_L] = COMBO(num_combo_l, MO(_NUM)),
+    /*[NUM_COMBO_L] = COMBO(num_combo_l, MO(_NUM)),*/
     // [NUM_COMBO_R] = COMBO(num_combo_r, MO(_NUM)),
 
     [SFT_COMBO] = COMBO(sft_combo, OSM(MOD_LSFT)),
-    [SFT_COMBO_L] = COMBO(sft_combo_l, OSM(MOD_LSFT)),
-    [SFT_COMBO_R] = COMBO(sft_combo_r, OSM(MOD_LSFT)),
+    [SFT_COMBO_L] = COMBO(sft_combo_l, KC_LSFT),
+    [SFT_COMBO_R] = COMBO(sft_combo_r, KC_LSFT),
 
     [CMD_COMBO] = COMBO(cmd_combo, OSM(MOD_LGUI)),
-    [CMD_COMBO_L] = COMBO(cmd_combo_l, OSM(MOD_LGUI)),
-    [CMD_COMBO_R] = COMBO(cmd_combo_r, OSM(MOD_LGUI)),
+    [CMD_COMBO_L] = COMBO(cmd_combo_l, KC_LGUI),
+    [CMD_COMBO_R] = COMBO(cmd_combo_r, KC_LGUI),
 
     [ALT_COMBO] = COMBO(alt_combo, OSM(MOD_LALT)),
-    [ALT_COMBO_L] = COMBO(alt_combo_l, OSM(MOD_LALT)),
-    [ALT_COMBO_R] = COMBO(alt_combo_r, OSM(MOD_LALT)),
+    [ALT_COMBO_L] = COMBO(alt_combo_l, KC_LALT),
+    [ALT_COMBO_R] = COMBO(alt_combo_r, KC_LALT),
 
     [CTL_COMBO] = COMBO(ctl_combo, OSM(MOD_LCTL)),
-    [CTL_COMBO_L] = COMBO(ctl_combo_l, OSM(MOD_LCTL)),
-    [CTL_COMBO_R] = COMBO(ctl_combo_r, OSM(MOD_LCTL)),
+    [CTL_COMBO_L] = COMBO(ctl_combo_l, KC_LCTL),
+    [CTL_COMBO_R] = COMBO(ctl_combo_r, KC_LCTL),
 
-    [SFT_CMD_COMBO_L] = COMBO(sft_cmd_combo_l, OSM(MOD_LSFT | MOD_LGUI)),
-    [SFT_CMD_COMBO_R] = COMBO(sft_cmd_combo_r, OSM(MOD_LSFT | MOD_LGUI)),
-    [SFT_ALT_COMBO_L] = COMBO(sft_alt_combo_l, OSM(MOD_LSFT | MOD_LALT)),
-    [SFT_ALT_COMBO_R] = COMBO(sft_alt_combo_r, OSM(MOD_LSFT | MOD_LALT)),
-    [SFT_CTL_COMBO_L] = COMBO(sft_ctl_combo_l, OSM(MOD_LSFT | MOD_LCTL)),
-    [SFT_CTL_COMBO_R] = COMBO(sft_ctl_combo_r, OSM(MOD_LSFT | MOD_LCTL)),
-    [CMD_CTL_COMBO_L] = COMBO(cmd_ctl_combo_l, OSM(MOD_LGUI | MOD_LCTL)),
-    [CMD_CTL_COMBO_R] = COMBO(cmd_ctl_combo_r, OSM(MOD_LGUI | MOD_LCTL)),
-    [CMD_ALT_COMBO_L] = COMBO(cmd_alt_combo_l, OSM(MOD_LGUI | MOD_LALT)),
-    [CMD_ALT_COMBO_R] = COMBO(cmd_alt_combo_r, OSM(MOD_LGUI | MOD_LALT)),
-    [CTL_ALT_COMBO_L] = COMBO(ctl_alt_combo_l, OSM(MOD_LCTL | MOD_LALT)),
-    [CTL_ALT_COMBO_R] = COMBO(ctl_alt_combo_r, OSM(MOD_LCTL | MOD_LALT)),
+    [SFT_CMD_COMBO_L] = COMBO(sft_cmd_combo_l, LSFT(KC_LGUI)),
+    [SFT_CMD_COMBO_R] = COMBO(sft_cmd_combo_r, LSFT(KC_LGUI)),
+    [SFT_ALT_COMBO_L] = COMBO(sft_alt_combo_l, LSFT(KC_LALT)),
+    [SFT_ALT_COMBO_R] = COMBO(sft_alt_combo_r, LSFT(KC_LALT)),
+    [SFT_CTL_COMBO_L] = COMBO(sft_ctl_combo_l, LSFT(KC_LCTL)),
+    [SFT_CTL_COMBO_R] = COMBO(sft_ctl_combo_r, LSFT(KC_LCTL)),
+    [CMD_CTL_COMBO_L] = COMBO(cmd_ctl_combo_l, LGUI(KC_LCTL)),
+    [CMD_CTL_COMBO_R] = COMBO(cmd_ctl_combo_r, LGUI(KC_LCTL)),
+    [CMD_ALT_COMBO_L] = COMBO(cmd_alt_combo_l, LGUI(KC_LALT)),
+    [CMD_ALT_COMBO_R] = COMBO(cmd_alt_combo_r, LGUI(KC_LALT)),
+    [CTL_ALT_COMBO_L] = COMBO(ctl_alt_combo_l, LCTL(KC_LALT)),
+    [CTL_ALT_COMBO_R] = COMBO(ctl_alt_combo_r, LCTL(KC_LALT)),
 
-    [SFT_CMD_ALT_COMBO_L] = COMBO(sft_cmd_alt_combo_l, OSM(MOD_LSFT | MOD_LGUI | MOD_LALT)),
-    [SFT_CMD_ALT_COMBO_R] = COMBO(sft_cmd_alt_combo_r, OSM(MOD_LSFT | MOD_LGUI | MOD_LALT)),
-    [SFT_CMD_CTL_COMBO_L] = COMBO(sft_cmd_ctl_combo_l, OSM(MOD_LSFT | MOD_LGUI | MOD_LCTL)),
-    [SFT_CMD_CTL_COMBO_R] = COMBO(sft_cmd_ctl_combo_r, OSM(MOD_LSFT | MOD_LGUI | MOD_LCTL)),
-    [CMD_ALT_CTL_COMBO_L] = COMBO(cmd_alt_ctl_combo_l, OSM(MOD_LGUI | MOD_LALT | MOD_LCTL)),
-    [CMD_ALT_CTL_COMBO_R] = COMBO(cmd_alt_ctl_combo_r, OSM(MOD_LGUI | MOD_LALT | MOD_LCTL)),
-    [SFT_CTL_ALT_COMBO_L] = COMBO(sft_ctl_alt_combo_l, OSM(MOD_LSFT | MOD_LCTL | MOD_LALT)),
-    [SFT_CTL_ALT_COMBO_R] = COMBO(sft_ctl_alt_combo_r, OSM(MOD_LSFT | MOD_LCTL | MOD_LALT)),
+    [SFT_CMD_ALT_COMBO_L] = COMBO(sft_cmd_alt_combo_l, LSFT(LGUI(KC_LALT))),
+    [SFT_CMD_ALT_COMBO_R] = COMBO(sft_cmd_alt_combo_r, LSFT(LGUI(KC_LALT))),
+    [SFT_CMD_CTL_COMBO_L] = COMBO(sft_cmd_ctl_combo_l, LSFT(LGUI(KC_LCTL))),
+    [SFT_CMD_CTL_COMBO_R] = COMBO(sft_cmd_ctl_combo_r, LSFT(LGUI(KC_LCTL))),
+    [CMD_ALT_CTL_COMBO_L] = COMBO(cmd_alt_ctl_combo_l, LGUI(LALT(KC_LCTL))),
+    [CMD_ALT_CTL_COMBO_R] = COMBO(cmd_alt_ctl_combo_r, LGUI(LALT(KC_LCTL))),
+    [SFT_CTL_ALT_COMBO_L] = COMBO(sft_ctl_alt_combo_l, LSFT(LCTL(KC_LALT))),
+    [SFT_CTL_ALT_COMBO_R] = COMBO(sft_ctl_alt_combo_r, LSFT(LCTL(KC_LALT))),
 
-    [SFT_CMD_ALT_CTL_COMBO_L] = COMBO(sft_cmd_alt_ctl_combo_l, OSM(MOD_LSFT | MOD_LGUI | MOD_LALT | MOD_LCTL)),
-    [SFT_CMD_ALT_CTL_COMBO_R] = COMBO(sft_cmd_alt_ctl_combo_r, OSM(MOD_LSFT | MOD_LGUI | MOD_LALT | MOD_LCTL)),
+    [SFT_CMD_ALT_CTL_COMBO_L] = COMBO(sft_cmd_alt_ctl_combo_l, LSFT(LGUI(LALT(KC_LCTL)))),
+    [SFT_CMD_ALT_CTL_COMBO_R] = COMBO(sft_cmd_alt_ctl_combo_r, LSFT(LGUI(LALT(KC_LCTL))))
 };
 
 bool get_combo_must_hold(uint16_t index, combo_t *combo) {
     switch (index) {
         // exclude accidental rolling combos
-        case NUM_COMBO_L:
-        case SFT_COMBO_L:
-        case CMD_COMBO_L:
-        case ALT_COMBO_L:
-        case CTL_COMBO_L:
-        case CMD_ALT_COMBO_L:
-        case CMD_CTL_COMBO_L:
-        case SFT_CTL_COMBO_L:
-        case CTL_ALT_COMBO_L:
-        case CMD_ALT_CTL_COMBO_L:
-        case SFT_CMD_ALT_COMBO_L:
-            return true;
+        case SFT_COMBO:
+        case CMD_COMBO:
+        case ALT_COMBO:
+        case CTL_COMBO:
+            return false;
     }
 
     return false;
