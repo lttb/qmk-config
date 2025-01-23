@@ -26,4 +26,6 @@ qmk compile -kb keebio/cepstrum/rev1 -km lttb
 # @see https://github.com/beekeeb/allium58
 # @see https://shop.beekeeb.com/product/allium58-glp-wired-kit/
 qmk compile -t uf2 -kb lily58/rev1 -km lttb -e CONVERT_TO=promicro_rp2040
+# Keychron Q15 Pro
+QMK_HOME="~/path/to/Keychron/qmk_firmware" qmk flash -kb keychron/q15_max/ansi_encoder -km lttb
 ```
