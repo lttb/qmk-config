@@ -14,17 +14,15 @@ LTO_ENABLE = yes
 # Enable audio keys and system control
 EXTRAKEY_ENABLE = yes
 
-AUTO_SHIFT_ENABLE = no
-
-MOUSEKEY_ENABLE = no
-
 COMBO_ENABLE = yes
-
-CONSOLE_ENABLE = no
-COMMAND_ENABLE = no
 
 CAPS_WORD_ENABLE = yes
 
 ifeq ($(strip $(KEYBOARD)), sofle_choc)
   VIA_ENABLE = no
 endif
+
+# AUTO_SHIFT_ENABLE = no
+# MOUSEKEY_ENABLE = no
+# CONSOLE_ENABLE = no
+# COMMAND_ENABLE = no

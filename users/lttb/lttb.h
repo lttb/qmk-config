@@ -4,6 +4,8 @@
 
 #include "quantum.h"
 
+#include QMK_KEYBOARD_H
+
 // Taken from drashna:
 // Since our quirky block definitions are basically a list of comma separated
 // arguments, we need a wrapper in order for these definitions to be
@@ -16,6 +18,11 @@
 #define LAYOUT KEYMAP
 #endif
 #endif
+
+#if defined(LAYOUT_split_3x6_3)
+#define LAYOUT_split_3x6_3_wrapper(...) LAYOUT_split_3x6_3(__VA_ARGS__)
+#endif
+
 #define KEYMAP_wrapper(...) LAYOUT(__VA_ARGS__)
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
